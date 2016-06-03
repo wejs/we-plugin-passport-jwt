@@ -45,6 +45,14 @@ See:
 
 ```
 
+## routes:
+
+### Authenticate and get token:
+
+**post /auth/jwt/authenticate**
+
+Post **email** and **password** to /auth/jwt/authenticate.
+
 ## Links
 
 > * We.js site: http://wejs.org

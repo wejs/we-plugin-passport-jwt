@@ -1,0 +1,45 @@
+{
+  "name": "we-plugin-passport-jwt",
+  "description": "JWT authentication strategy plugin for We.js",
+  "version": "1.0.0",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "NODE_ENV=test LOG_LV=info ./node_modules/.bin/mocha test/bootstrap.js test/**/*.test.js",
+    "verbose-test": "NODE_ENV=test LOG_LV=verbose ./node_modules/.bin/mocha test/bootstrap.js test/**/*.test.js -b "
+  },
+  "dependencies": {
+    "jsonwebtoken": "^7.0.0",
+    "passport-jwt": "^2.0.0"
+  },
+  "keywords": [
+    "we.js",
+    "plugin",
+    "passport",
+    "auth",
+    "jwt"
+  ],
+  "files": [
+    "files",
+    "lib",
+    "locales",
+    "server",
+    "install.js",
+    "plugin.js"
+  ],
+  "devDependencies": {
+    "express-mysql-session": "^1.0.0",
+    "fs-extra": "^0.30.0",
+    "mocha": "^2.5.3",
+    "mysql": "^2.10.2",
+    "rimraf": "^2.5.2",
+    "supertest": "^1.2.0",
+    "we-core": "wejs/we-core",
+    "we-plugin-acl": "^1.1.0",
+    "we-plugin-auth": "^1.1.0",
+    "we-plugin-user": "^1.0.2",
+    "we-test-tools": "wejs/we-test-tools"
+  },
+  "repository": "wejs/we-plugin-passport-jwt",
+  "author": "Alberto Souza <contato@albertosouza.net>",
+  "license": "MIT"
+}

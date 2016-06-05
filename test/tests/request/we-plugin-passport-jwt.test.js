@@ -16,7 +16,7 @@ describe('we-plugin-passport-jwtFeature', function() {
     we = helpers.getWe();
 
     var userStub = stubs.userStub();
-    helpers.createUser(userStub, function(err, user) {
+    helpers.createUser(userStub, function (err, user) {
       if (err) throw err;
 
       salvedUser = user;
@@ -44,7 +44,6 @@ describe('we-plugin-passport-jwtFeature', function() {
         }
 
         assert(res.body.token);
-        assert(res.body.token.indexOf('JWT') === 0);
 
         assert.equal(res.body.success, true);
         assert.equal(res.body.user.id, salvedUser.id);
@@ -82,7 +81,7 @@ describe('we-plugin-passport-jwtFeature', function() {
 
         request(http)
         .get('/protected')
-        .set('Authorization', token)
+        .set('Authorization', 'JWT '+token)
         .set('Accept', 'application/json')
         .expect(200)
         .end(function (err, res) {

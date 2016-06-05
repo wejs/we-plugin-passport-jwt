@@ -1,3 +1,4 @@
 {
-	"response.notFound.title": "response.notFound.title"
+	"response.notFound.title": "response.notFound.title",
+	"ER_BAD_FIELD_ERROR: Unknown column 'roles' in 'field list'": "ER_BAD_FIELD_ERROR: Unknown column 'roles' in 'field list'"
 }

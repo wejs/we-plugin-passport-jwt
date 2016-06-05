@@ -17,6 +17,7 @@ module.exports = {
         res.addMessage('error', 'auth.login.wrong.email.or.password');
         return res.badRequest();
       }
+
       // get the user password
       return user.getPassword()
       .then(function afterGetPassword(passwordObj) {
@@ -25,7 +26,8 @@ module.exports = {
           return res.badRequest();
         }
 
-        return passwordObj.validatePassword(password, function (err, isValid) {
+        return passwordObj
+        .validatePassword(password, function (err, isValid) {
           if (err) return res.queryError(err);
           if (!isValid) {
             res.addMessage('error', 'auth.login.user.incorrect.password.or.email');

@@ -37,8 +37,8 @@
     "supertest": "^1.2.0",
     "we-core": "wejs/we-core",
     "we-plugin-acl": "^1.1.0",
-    "we-plugin-auth": "^1.1.0",
-    "we-plugin-user": "^1.0.2",
+    "we-plugin-auth": "^1.1.1",
+    "we-plugin-user": "^1.0.3",
     "we-test-tools": "wejs/we-test-tools"
   },
   "repository": "wejs/we-plugin-passport-jwt",

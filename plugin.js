@@ -32,22 +32,20 @@ module.exports = function loadPlugin(projectPath, Plugin) {
 
           // passReqToCallback: true,
 
-          findUser: function findUserAndValidJWT(jwt_payload, done) {
-            // console.log('>>jwt_payload>>', jwt_payload);
-
+          findUser: function findUserAndValidJWT (jwtPayload, done) {
             // find user in DB
             plugin.we.db.models.user
-            .findById(jwt_payload.userId)
+            .findById(jwtPayload.userId)
             .then (function afterFindUser(user) {
               if (!user) {
                 return done(null, false, {
                   message: 'auth.login.wrong.email.or.password'
-                });
+                })
               }
 
-              done(null, user);
+              done(null, user)
             })
-            .catch(done);
+            .catch(done)
           }
         }
       }
@@ -73,10 +71,7 @@ module.exports = function loadPlugin(projectPath, Plugin) {
   plugin.events.on('we:after:load:passport', function afterLoadExpress(we) {
 
     we.express.use(function (req, res, next) {
-      we.passport.authenticate('jwt', {
-        session: false
-      },
-      function afterCheckToken(err, user, info) {
+      we.passport.authenticate('jwt', function afterCheckToken (err, user, info) {
         if (err) return res.serverError(err);
 
         if (info) {
@@ -86,8 +81,9 @@ module.exports = function loadPlugin(projectPath, Plugin) {
             req.we.log.error('JWT:afterCheckToken:', info);
           }
         }
-        // set user
-        req.user = user;
+
+        // set is is authenticated
+        if (user) req.user = user;
 
         next();
       })(req, res, next);

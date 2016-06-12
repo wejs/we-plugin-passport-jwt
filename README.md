@@ -25,9 +25,10 @@ See:
       strategies: {
         // session
         jwt: {
-          Strategy: JwtStrategy,
-
           secretOrKey: null, // REQUIRED!
+          
+          // optional configs:
+         
           algorithm: 'HS256',
           audience: null, // will be set after load all plugins
           issuer: 'wejs.org',

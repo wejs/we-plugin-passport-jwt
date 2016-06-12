@@ -7,7 +7,7 @@ JWT authentication strategy plugin for We.js build with jsonwebtoken and passpor
 ## Installation
 
 ```sh
-npm i --save we-plugin-passport-jwt we-plugin-passport-auth
+npm i --save we-plugin-passport-jwt we-plugin-auth
 ```
 
 ## Configuration

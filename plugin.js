@@ -78,7 +78,8 @@ module.exports = function loadPlugin(projectPath, Plugin) {
           if (info == 'Error: No auth token') {
             req.we.log.verbose('JWT:afterCheckToken:', info);
           } else {
-            req.we.log.error('JWT:afterCheckToken:', info);
+            req.we.log.error('JWT:afterCheckToken:', err, info);
+            return res.serverError({ errors: err });
           }
         }
 

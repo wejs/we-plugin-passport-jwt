@@ -1,7 +1,7 @@
 {
   "name": "we-plugin-passport-jwt",
   "description": "JWT authentication strategy plugin for We.js",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "main": "plugin.js",
   "scripts": {
     "test": "NODE_ENV=test LOG_LV=info ./node_modules/.bin/mocha test/bootstrap.js test/**/*.test.js",
@@ -13,14 +13,10 @@
     "passport-jwt": "^2.0.0"
   },
   "keywords": [
-    "we.js",
-    "plugin",
-    "passport",
-    "auth",
-    "jwt"
+    "wejs-plugin"
   ],
   "files": [
-    "files",
+    "files/public",
     "lib",
     "locales",
     "server",
@@ -43,5 +39,10 @@
   },
   "repository": "wejs/we-plugin-passport-jwt",
   "author": "Alberto Souza <contato@albertosouza.net>",
-  "license": "MIT"
+  "license": "MIT",
+  "wejs": {
+    "dependencies": {
+      "we-plugin-auth": true
+    }
+  }
 }

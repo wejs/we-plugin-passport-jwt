@@ -36,14 +36,16 @@ module.exports = function loadPlugin(projectPath, Plugin) {
             // find user in DB
             plugin.we.db.models.user
             .findById(jwtPayload.userId)
-            .then (function afterFindUser(user) {
+            .then (function afterFindUser (user) {
               if (!user) {
-                return done(null, false, {
+                done(null, false, {
                   message: 'auth.login.wrong.email.or.password'
                 })
+              } else {
+                done(null, user)
               }
 
-              done(null, user)
+              return null
             })
             .catch(done)
           }

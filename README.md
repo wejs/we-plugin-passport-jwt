@@ -32,10 +32,10 @@ See:
           algorithm: 'HS256',
           audience: null, // will be set after load all plugins
           issuer: 'wejs.org',
-          jwtid: null,
-          subject: null,
-          noTimestamp: null,
-          header: null,
+          //jwtid: undefined,
+          //subject: undefined,
+          //noTimestamp: undefined,
+          //header: undefined,
           expiresIn: 10080, // in seconds
 
           session: false,    

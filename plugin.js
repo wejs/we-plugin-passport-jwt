@@ -18,14 +18,14 @@ module.exports = function loadPlugin(projectPath, Plugin) {
 
           jwtFromRequest: ExtractJwt.fromAuthHeader(),
 
-          secretOrKey: null, // set it in config/local.js
+          secretOrKey: undefined, // set it in config/local.js
 
           algorithm: 'HS256',
-          audience: null, // will be set after load all plugins
+          audience: undefined, // will be set after load all plugins
           issuer: 'wejs.org',
-          // jwtid: null,
-          // subject: null,
-          // noTimestamp: null,
+          // jwtid: undefined,
+          // subject: undefined,
+          // noTimestamp: undefined,
           expiresIn: 10080, // in seconds
 
           session: false,
